@@ -6,9 +6,9 @@
 #include <semaphore.h>
 #include <time.h>
 
-#define SHM_NAME "/activity2_shm"
-#define SEM1_NAME "/activity2_sem1"
-#define SEM2_NAME "/activity2_sem2"
+#define SHM_NAME "/activity1_shm"
+#define SEM1_NAME "/activity1_sem1"
+#define SEM2_NAME "/activity1_sem2"
 
 int main(int argc, char** argv) {
     srand(time(NULL));
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
         perror("mmap");
         exit(1);
     }
-    *shared_num = rand() % 20 + 11; // Generate a random number between 1 and 10
+    *shared_num = rand() % 20 + 11; // Generate a random number between 11 and 20
 
     // Create child process
     pid_t pid = fork();
